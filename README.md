@@ -1,0 +1,2 @@
+# budgety
+calculate budgety
