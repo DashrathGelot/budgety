@@ -1,0 +1,51 @@
+<html>
+    <head><title>budget</title>
+        <link rel="stylesheet" href="budget.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="text"><center><div class="t">Available budget in</div><div class="date"> november 2019</div></center></div>
+            <div class="numberbudget">+970000</div>
+           <center> <div class="income"><div class="i">INCOME</div><div class="val"id="ti">+9700</div></div></center>
+            <center><div class="expens"><div class="e">EXPENSES</div><div class="val clearfix"><div id="te">+900</div><div class="per">p%</div></div></div></center>
+        </div>
+        <div class="input">
+            <select class="addtype">
+                <option value="inc" id="type" selected>+</option>
+                <option value="exp">-</option>
+            </select>
+               <div class="descriptio"> <input type="text" id="description" placeholder="Add Description"/>
+                <input type="text" id="number" placeholder="Value"/><img src="btn1.png" class="btn"/>
+            </div>
+        </div>
+               <div class="bottom clearfix">
+                    <div class="incomes">
+                        <h2 class="icome__title">Income</h2>
+                        <div class="income__list">
+                          <!--  <div class="item clearfix" id="income-0">
+                                <div class="item__description">Salary</div>
+                                <div class="right clearfix">
+                                        <div class="ival">+97310</div>
+                                        <div class="delet"><button class="item__delete--btn">X</button></div>
+                                </div>    
+                            </div>-->
+                        </div>
+                    </div>
+
+
+                    <div class="expenses">
+                            <h2 class="expense__title">Expenses</h2>
+                            <div class="expense__list">
+                               <!-- <div class="item clearfix" id="expense-0">
+                                    <div class="item__description">Salary</div>
+                                    <div class="right clearfix">
+                                            <div class="ival">+97310</div>
+                                            <div class="delet"><button class="item__delete--btn">X</button></div>
+                                    </div>    
+                                </div>-->
+                            </div>
+                        </div>
+                </div>
+            <script src="budgety.js"></script>
+    </body>
+</html>
