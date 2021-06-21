@@ -1,0 +1,6 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "test_hive"
+  incremental: false

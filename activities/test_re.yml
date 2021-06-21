@@ -1,0 +1,28 @@
+version: 1
+job:
+  type: "recon"
+source:
+  endpoint: "l_delta"
+  properties:
+    table: "source_emp"
+target:
+  endpoint: "l_delta"
+  properties:
+    table: "target_emp"
+recon:
+  primary_keys:
+  - "id"
+  recon_metrics:
+    avg_age:
+      aggregation: "avg(age)"
+      detail_check_enabled: true
+    'new ':
+      detail_check_enabled: true
+      source_aggregation: "sum(salary)"
+      target_aggregation: "sum(age)"
+    renew:
+      source_aggregation: "sum(age)"
+      target_aggregation: "sum(salary)"
+    sum:
+      aggregation: "sum(salary)"
+      detail_check_enabled: true

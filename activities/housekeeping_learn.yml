@@ -1,0 +1,9 @@
+version: 1
+job:
+  type: "housekeeping"
+housekeeping:
+  endpoint: "p_delta"
+  properties: {}
+  operation: "delete"
+  reference_point:
+    reference_type: "current_time"

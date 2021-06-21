@@ -1,0 +1,35 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "mai_file"
+  properties:
+    source_file_pattern: "ArticleMaster.csv"
+    format: "delimited"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: false
+      clean_column_name: false
+      trim_white_space: "none"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+target:
+  endpoint: "mai_file"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false
+      trim_white_space: "none"

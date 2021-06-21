@@ -1,0 +1,4 @@
+version: 1
+technology: google-analytics
+authentication: service-account
+private_key_path: "/guzzle/gatest-213409-609c5320c233.json"

@@ -1,0 +1,3 @@
+version: 1
+technology: kafka
+bootstrap.servers: "sandbox-hdp.hortonworks.com:6667"

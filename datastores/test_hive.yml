@@ -1,0 +1,5 @@
+database: "default"
+jdbc_url: "jdbc:hive://localhost:1000 "
+technology: "hive"
+version: 1
+driver_class: "org.apache.hadoop.hive.jdbc.HiveDriver"

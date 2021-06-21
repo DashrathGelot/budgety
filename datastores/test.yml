@@ -1,0 +1,5 @@
+version: 1
+technology: "file"
+folder: "test1"
+path: "/guzzle/guzzle/test-data/"
+type: "lfs"

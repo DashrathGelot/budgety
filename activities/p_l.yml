@@ -1,0 +1,8 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "l_order_hive"
+  properties:
+    table: ""
+  incremental: false

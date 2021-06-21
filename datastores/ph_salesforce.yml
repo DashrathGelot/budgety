@@ -1,0 +1,7 @@
+version: 1
+technology: salesforce
+username: demo_username
+password: demo_password
+client_id: demo_client_id
+client_secret: demo_client_secret
+api_version: v44.0

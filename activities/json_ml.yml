@@ -1,0 +1,20 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "test"
+  properties:
+    source_file_pattern: "json/multiline.json"
+    format: "json"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      clean_column_name: false
+      multiline: true
+  column_mapping:
+    obj1.id: "first_name"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+folder: "/kl"

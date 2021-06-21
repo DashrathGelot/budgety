@@ -1,0 +1,40 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "test"
+  properties:
+    source_file_pattern: "json/users*.json"
+    format: "fixed"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      contains_header: true
+    processed_file_path: "/"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+target:
+  endpoint: "space_seperated"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    path: "from_json_csv_with_cm"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: true
+      trim_white_space: "none"
+reject:
+  endpoint: "space_seperated"
+  properties:
+    format: "json"
+    path: "reject_csv_from_json"
+    charset: "UTF-8"
+    preserve_hierarchy: false
+    format_properties:
+      merge_file: true

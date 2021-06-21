@@ -1,0 +1,29 @@
+version: 1
+job:
+  type: "constraint_checks"
+  tags:
+  - "cons"
+source:
+  endpoint: "test_jdbc"
+  primary_keys:
+  - "name"
+  properties:
+    table: "users"
+validation_rules:
+  check_salary:
+    sql: "salary <= 1200"
+    constraint_data: "CONCAT(name, \" salary is  \", salary)"
+  num:
+    sql: "salary = 0"
+  salary_equal:
+    sql: "salary = 1000"
+    constraint_data: "CONCAT(name, \" salary is  \", salary)"
+    detail_check_enabled: true
+  salary_greater:
+    sql: "salary > 1200"
+    constraint_data: "CONCAT(name, \" salary is  \", salary)"
+    detail_check_enabled: true
+  salary_higher:
+    sql: "salary >= 100"
+    constraint_data: "CONCAT(name, \" salary is  \", salary)"
+    detail_check_enabled: true

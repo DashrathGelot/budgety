@@ -1,0 +1,19 @@
+version: 1
+job:
+  type: "housekeeping"
+housekeeping:
+  endpoint: "l_order_hive"
+  properties:
+    table: "order2"
+  housekeeping_column: "order_date"
+  operation: "delete"
+  reference_point:
+    reference_type: "max_value"
+  retention_strategies:
+  - partitions:
+    - system: "order"
+    - location: "*"
+    retention_strategy: "5d, 2w, *m, *q, 1y"
+    day_of_week: 6
+    strict_retention_period_end: false
+    strict_retention_grain: []

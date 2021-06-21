@@ -1,0 +1,8 @@
+version: 1
+job:
+  type: "recon"
+source:
+  endpoint: "test_hive"
+  properties:
+    sql: ""
+folder: "/kl"

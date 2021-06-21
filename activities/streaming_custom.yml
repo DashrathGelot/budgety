@@ -1,0 +1,29 @@
+version: 1
+
+job:
+  type: streaming
+
+
+receive_test:
+  type: source
+  batch_duration: 5
+  class: com.test.TestGenerator
+  properties:
+    prop1: value1
+    prop2: value2
+  columns:
+  - test
+  to: [show_data, custom_target]
+
+
+show_data:
+  type: show
+
+
+custom_target:
+  type: target
+  class: com.test.CustomTarget
+  properties:
+    prop1: value1
+    prop2: value2
+

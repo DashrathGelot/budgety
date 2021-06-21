@@ -1,0 +1,10 @@
+version: 1
+context_stage_mappings:
+- context: {}
+  rerun_batch: true
+  stage_pairs:
+  - "STG"
+  stages:
+  - name: "STG"
+    job_groups:
+    - "log_test_pipeline"

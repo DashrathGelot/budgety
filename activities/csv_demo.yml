@@ -1,0 +1,54 @@
+version: 1
+job:
+  type: "ingestion"
+  tags:
+  - "abc"
+source:
+  endpoint: "test"
+  properties:
+    source_file_pattern: "csv/users1.csv"
+    format: "delimited"
+    charset: "UTF-8 "
+    partial_load: false
+    format_properties:
+      column_delimiter: ",  "
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: true
+      clean_column_name: false
+      trim_white_space: "none"
+    table_dependency: []
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+  columns: []
+target:
+  endpoint: "test"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    path: "targetCsv"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false
+      trim_white_space: "none"
+reject:
+  endpoint: "test"
+  properties:
+    format: "delimited"
+    path: "reject"
+    charset: "UTF-8"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false
+folder: "/"

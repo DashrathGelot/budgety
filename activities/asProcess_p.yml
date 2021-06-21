@@ -1,0 +1,15 @@
+version: 1
+job:
+  type: "processing"
+source:
+  endpoint: "test_hive"
+  properties:
+    table: "user"
+  incremental: true
+target:
+  endpoint: "test_hive"
+  operation: "append"
+  soft_delete: false
+  properties:
+    table: "u"
+folder: "/kl/newF"

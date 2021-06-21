@@ -1,0 +1,17 @@
+version: 1
+job:
+  type: "housekeeping"
+housekeeping:
+  endpoint: "SRI_DELTA"
+  properties:
+    table: "test_housekeeping"
+  housekeeping_column: "w_business_date"
+  operation: "delete"
+  reference_point:
+    reference_type: "max_value"
+  retention_strategies:
+  - partitions: []
+    retention_strategy: "4d, *w, *m, *q, *y"
+    day_of_week: 1
+    strict_retention_period_end: false
+    strict_retention_grain: []

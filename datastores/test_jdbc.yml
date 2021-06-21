@@ -1,0 +1,20 @@
+database: "training"
+hostname: "localhost"
+username: "root"
+connection_properties: {}
+technology: "jdbc"
+version: 1
+port: 3306
+driver_class: "com.mysql.jdbc.Driver"
+tunnel:
+  type: "local"
+  guzzle_gateway:
+    hostname: "localhost"
+    forward_port: 3306
+  on_premise_gateway:
+    hostname: "localhost"
+    ssh_username: "root"
+    ssh_port: 3306
+type: "standard"
+vendor: "mysql"
+password: "Root@973"

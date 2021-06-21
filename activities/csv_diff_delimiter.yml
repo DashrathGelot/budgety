@@ -1,0 +1,50 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "l_dbfs"
+  properties:
+    source_file_pattern: "orderrefine.csv"
+    format: "delimited"
+    charset: "UTF-8 "
+    partial_load: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: true
+      clean_column_name: true
+      trim_white_space: "both"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+  columns:
+  - name: "id"
+    data_type:
+      value: "int"
+    nullable:
+      value: true
+  - name: "order_date"
+    data_type:
+      value: "timestamp"
+    nullable:
+      value: true
+  - name: "sales"
+    data_type:
+      value: "double"
+    nullable:
+      value: true
+  - name: "quantity"
+    data_type:
+      value: "int"
+    nullable:
+      value: true
+target:
+  endpoint: "l_order_hive"
+  properties:
+    table: "orderT"
+    auto_create_table: true
+  operation: "overwrite"
+folder: "/kl"

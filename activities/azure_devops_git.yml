@@ -1,0 +1,5 @@
+version: 1
+job:
+  type: "recon"
+source:
+  endpoint: "l_order_hive"

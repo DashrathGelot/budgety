@@ -1,0 +1,68 @@
+version: 1
+job:
+  type: "ingestion"
+source:
+  endpoint: "hkp"
+  properties:
+    source_file_pattern: "/order2.csv"
+    format: "delimited"
+    charset: "UTF-8"
+    partial_load: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      infer_schema: false
+      clean_column_name: false
+      trim_white_space: "none"
+schema:
+  schema_derivation_strategy: "source"
+  strict_schema_check: true
+  discard: true
+  columns:
+  - name: "      |id\t|order_id\t    |customer_id  |customer_name\t    |product_id\t      |product_name\t                    |sales\t  |quantity\t |order_date              |system\t|location |"
+    data_type:
+      value: "string"
+      validate: false
+    nullable:
+      value: true
+  - name: "src_filename"
+    data_type:
+      value: "string"
+      validate: false
+    nullable:
+      value: true
+  - name: "src_fullfilepath"
+    data_type:
+      value: "string"
+      validate: false
+    nullable:
+      value: true
+  - name: "src_fulldirname"
+    data_type:
+      value: "string"
+      validate: false
+    nullable:
+      value: true
+  - name: "src_reldirname"
+    data_type:
+      value: "string"
+      validate: false
+    nullable:
+      value: true
+target:
+  endpoint: "hkp"
+  properties:
+    format: "delimited"
+    charset: "UTF-8"
+    path: "_order2_csv"
+    preserve_hierarchy: false
+    format_properties:
+      column_delimiter: ","
+      quote_delimiter: "\""
+      escape_char: "\\\\"
+      contains_header: true
+      merge_file: false
+      trim_white_space: "none"
+folder: "/kl"

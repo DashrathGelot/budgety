@@ -1,0 +1,4 @@
+version: 1
+config:
+  naming_convention: "fas"
+  validation_job_name: "test_json"
